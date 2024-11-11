@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Foodie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #ff7e5f, #feb47b); line-height: 1.6; }
+        
+        /* Navbar Styles */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; background-color: #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px; margin: 20px auto; max-width: 1200px; }
+        .logo { color: #ff6f61; font-size: 32px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .logo:hover { text-decoration: underline; color: #feb47b; }
+        ul { display: flex; list-style: none; }
+        ul li { margin-left: 30px; }
+        ul li a { text-transform: uppercase; color: #333; font-weight: 500; font-size: 16px; text-decoration: none; transition: color 0.3s ease; }
+        ul li a:hover { color: #ff6f61; }
+
+        /* Menu Grid */
+        .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding: 40px 30px; max-width: 1200px; margin: auto; }
+        .menu-item { background-color: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; }
+        .menu-item:hover { transform: scale(1.05); box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); }
+        .menu-item img { width: 100%; height: 250px; object-fit: cover; border-bottom: 4px solid #ff6f61; transition: opacity 0.3s ease; }
+        .menu-item img:hover { opacity: 0.85; }
+        .menu-item .details { padding: 20px; transition: background-color 0.3s ease; }
+        .menu-item:hover .details { background-color: #fffcf5; }
+        .menu-item h3 { color: #333; font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+        .menu-item p { color: #777; font-size: 16px; line-height: 1.5; margin-bottom: 15px; }
+        .menu-item .price { color: #ff6f61; font-weight: 600; font-size: 18px; margin-bottom: 20px; }
+        .add-to-cart { background-color: #ff6f61; color: white; padding: 12px 20px; border: none; border-radius: 30px; cursor: pointer; font-size: 16px; font-weight: 600; width: 100%; transition: background-color 0.3s ease, transform 0.3s ease; }
+        .add-to-cart:hover { background-color: #e65c4a; transform: translateY(-3px); }
+        .add-to-cart:active { transform: translateY(1px); }
+
+        /* Cart Icon */
+        .cart-icon { position: relative; font-size: 24px; color: #fff; cursor: pointer; }
+        .cart-icon .cart-count { position: absolute; top: -10px; right: -10px; background-color: #ffbc00; color: #fff; border-radius: 50%; padding: 5px 10px; font-size: 14px; }
+
+        /* Footer */
+        footer { text-align: center; padding: 20px; background-color: #fff; color: #333; font-size: 16px; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); margin-top: 40px; border-radius: 8px; }
+        footer a { color: #ff6f61; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        footer a:hover { color: #feb47b; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Foodie</a>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Review.html">Reviews</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Checkout.html" class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </a></li>
+        </ul>
+    </nav>
+
+<!-- Menu Items -->
+<div class="menu">
+    <!-- Hamburger Item -->
+    <div class="menu-item">
+        <img src="https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRRto3IlY56MlAIOAvXHvPEVxBDVzG1uz1zULEBYdJ-I4Aa-xOyPEVvv7fmIjLnxaOz" alt="Hamburger">
+        <div class="details">
+            <h3>Hamburger</h3>
+            <p>Delicious beef patty with lettuce, tomato, cheese, and our special sauce.</p>
+            <div class="price">$7.00</div>
+            <button class="add-to-cart" data-name="Hamburger" data-price="7.00">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cheese Pizza Item -->
+    <div class="menu-item">
+        <img src="https://www.bbcgoodfood.com/sites/default/files/styles/medium/public/recipe/recipe-image/2017/11/cheese-pizza.jpg?itok=l6jPUZBh" alt="Cheese Pizza">
+        <div class="details">
+            <h3>Cheese Pizza</h3>
+            <p>Classic cheese pizza with a crispy crust, topped with mozzarella and fresh basil.</p>
+            <div class="price">$9.00</div>
+            <button class="add-to-cart" data-name="Cheese Pizza" data-price="9.00">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Chicken Parmigiana Item -->
+    <div class="menu-item">
+        <img src="https://www.recipetineats.com/wp-content/uploads/2021/04/Chicken-Parmigiana-4-500x500.jpg" alt="Chicken Parmigiana">
+        <div class="details">
+            <h3>Chicken Parmigiana</h3>
+            <p>Crispy breaded chicken, marinara sauce, and melted mozzarella cheese.</p>
+            <div class="price">$12.00</div>
+            <button class="add-to-cart" data-name="Chicken Parmigiana" data-price="12.00">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Pizza Item -->
+    <div class="menu-item">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/94/0a/7c/yaaayyyy.jpg?w=600&h=-1&s=1" alt="Pizza">
+        <div class="details">
+            <h5>Pizza</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$8</div>
+            <button class="add-to-cart" data-name="Pizza" data-price="8">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Chicken Lollipop Item -->
+    <div class="menu-item">
+        <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2021/11/chicken-lollipop-1.jpeg" alt="Chicken Lollipop">
+        <div class="details">
+            <h5>Chicken Lollipop</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$7</div>
+            <button class="add-to-cart" data-name="Chicken Lollipop" data-price="7">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Biryani Item -->
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvnpN4iJp9j9hSZI5cNUU4vK_zmVP96hLUzw&s" alt="Biryani">
+        <div class="details">
+            <h5>Biryani</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$10</div>
+            <button class="add-to-cart" data-name="Biryani" data-price="10">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cake Item -->
+    <div class="menu-item">
+        <img src="https://myculturedpalate.com/wp-content/uploads/2017/05/sour-cream-cheesecake.jpg" alt="Cake">
+        <div class="details">
+            <h5>Cake</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$15</div>
+            <button class="add-to-cart" data-name="Cake" data-price="15">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Mango Shake Item -->
+    <div class="menu-item">
+        <img src="https://pipingpotcurry.com/wp-content/uploads/2021/07/mango-smoothie-copy.jpg" alt="Mango Shake">
+        <div class="details">
+            <h5>Mango Shake</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$6</div>
+            <button class="add-to-cart" data-name="Mango Shake" data-price="6">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Pudding Item -->
+    <div class="menu-item">
+        <img src="https://www.justonecookbook.com/wp-content/uploads/2022/11/Japanese-Custard-Pudding-1211-I-2.jpg" alt="Pudding">
+        <div class="details">
+            <h5>Pudding</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$5</div>
+            <button class="add-to-cart" data-name="Pudding" data-price="5">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Mocktail Item -->
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NENhVUMVQIgjmf0cL41aXtPJ-qQqCnjAKA&s" alt="Mocktail">
+        <div class="details">
+            <h5>Mocktail</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$9</div>
+            <button class="add-to-cart" data-name="Mocktail" data-price="9">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Kimbap Item -->
+    <div class="menu-item">
+        <img src="https://i.ytimg.com/vi/Y-Y9CXGRJPU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDVwoF46WRqdgZ37p47Ts5pxypPyg" alt="Kimbap">
+        <div class="details">
+            <h5>Kimbap</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$13</div>
+            <button class="add-to-cart" data-name="Kimbap" data-price="13">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cookies Item -->
+    <div class="menu-item">
+        <img src="https://img.freepik.com/premium-photo/multicolored-french-macaroni-macaroni-cookies-white-box_94046-3959.jpg" alt="Cookies">
+        <div class="details">
+            <h5>Cookies</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$5</div>
+            <button class="add-to-cart" data-name="Cookies" data-price="5">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Dumplings Item -->
+    <div class="menu-item">
+        <img src="https://www.foodandwine.com/thmb/YSEW4bOSWPjHzZFolCu_byqrv_g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pork-shrimp-and-chive-dumplings-FT-RECIPE0222-92ea38cc7c5845708fc536fe8c27869a.jpg" alt="Dumplings">
+        <div class="details">
+            <h5>Dumplings</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$15</div>
+            <button class="add-to-cart" data-name="Dumplings" data-price="15">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Corn Dog Item -->
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQezDpkFzzbFMazKyq7KIqypP7s318beIh-anXM5UimoZYY97wxuLe3yXV3Jax1CZ6a3c8&usqp=CAU" alt="Corn Dog">
+        <div class="details">
+            <h5>Corn Dog</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">$8</div>
+            <button class="add-to-cart" data-name="Corn Dog" data-price="8">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Foodie | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+
+    <script>
+        // Retrieve the cart from localStorage or initialize it if empty
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Update the cart count in the cart icon
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="item-info">
+                        <p class="item-name">${item.name}</p>
+                        <p class="item-price">$${item.price}</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button onclick="updateQuantity(${item.id}, 'decrease')">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, 'increase')">+</button>
+                    </div>
+                    <button class="remove-item" onclick="removeItem(${item.id})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            subtotalElem.innerText = `$${subtotal.toFixed(2)}`;
+            shippingElem.innerText = `$${shippingCost.toFixed(2)}`;
+            updateTotal(subtotal);
+            updateCartCount();
+        }
+
+        function updateQuantity(id, action) {
+            const item = cart.find(i => i.id === id);
+            if (action === 'increase') {
+                item.quantity++;
+            } else if (action === 'decrease' && item.quantity > 1) {
+                item.quantity--;
+            }
+            updateCartUI();
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateTotal(subtotal) {
+            const discount = parseFloat(discountElem.innerText.substring(1)) || 0;
+            const total = subtotal - discount + shippingCost;
+            totalElem.innerText = total.toFixed(2);
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((count, item) => count + item.quantity, 0);
+            cartCountElem.innerText = totalItems;
+        }
+
+    
+        // Save the cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+    
+        // Add item to cart or update its quantity
+        function addToCart(item) {
+            const existingItem = cart.find(cartItem => cartItem.name === item.name);
+            
+            if (existingItem) {
+                // Increase quantity if item exists
+                existingItem.quantity += 1;
+            } else {
+                // Add new item with quantity 1 if it doesn’t exist
+                cart.push({ ...item, quantity: 1 });
+            }
+    
+            saveCart();  // Save updated cart and update the count
+        }
+    
+        // Remove an item from the cart
+        function removeFromCart(itemName) {
+            cart = cart.filter(item => item.name !== itemName);
+            saveCart();
+        }
+    
+        // Decrement item quantity or remove if it reaches zero
+        function decrementQuantity(itemName) {
+            const item = cart.find(cartItem => cartItem.name === itemName);
+            if (item) {
+                item.quantity -= 1;
+                if (item.quantity === 0) {
+                    removeFromCart(itemName);
+                } else {
+                    saveCart();
+                }
+            }
+        }
+    
+        // Set up event listeners for "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const item = {
+                    name: button.dataset.name,
+                    price: parseFloat(button.dataset.price)
+                };
+                addToCart(item);
+            });
+        });
+    
+        // Display the cart details (sample implementation for demonstration)
+        function displayCart() {
+            const cartDisplay = document.querySelector('#cartDisplay');
+            cartDisplay.innerHTML = '';  // Clear previous cart items
+            
+            if (cart.length === 0) {
+                cartDisplay.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemRow = document.createElement('div');
+                    itemRow.innerHTML = `
+                        <span>${item.name}</span>
+                        <span>$${item.price}</span>
+                        <button onclick="decrementQuantity('${item.name}')">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="addToCart({name: '${item.name}', price: ${item.price}})">+</button>
+                        <button onclick="removeFromCart('${item.name}')">Remove</button>
+                    `;
+                    cartDisplay.appendChild(itemRow);
+                });
+            }
+        }
+    
+        // Load and display the cart on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+            displayCart();
+        });
+    </script>    
+
+</body>
+</html>
